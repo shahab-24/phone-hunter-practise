@@ -1,4 +1,4 @@
-const loadPhone = async (searchPhone, isShowAll) => {
+const loadPhone = async (searchPhone = '13', isShowAll) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchPhone}`);
   const data = await res.json();
   const phones = data.data;
@@ -34,7 +34,7 @@ const displayPhones = (phones, isShowAll) => {
     <h2 class="card-title">${phone.phone_name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions justify-center">
-      <button class="btn btn-primary">Buy Now</button>
+      <button onclick="handlePhoneDetail('${phone.slug}')" class="btn btn-primary">Show Details</button>
     </div>
   </div>
   `;
@@ -66,6 +66,32 @@ const showAllPhone = () =>{
   handleSearch(true);
 }
 
+
+const handlePhoneDetail = async (id) => {
+  const res = await fetch (`https://openapi.programming-hero.com/api/phone/${id}`);
+  const data = await res.json();
+  const phone = data.data;
+
+  // console.log(data);
+  showPhoneDetail(phone);
+}
+
+const showPhoneDetail = (phone) => {
+  const phoneTitle = document.getElementById('phone-title');
+  phoneTitle.innerText = phone.name;
+
+  const phoneContainer = document.getElementById('phone_detail-container');
+  phoneContainer.innerHTML = `
+  <img src="${phone.image}">
+  brand: ${phone.brand};
+  
+
+  `
+
+
+
+  show_phone_detail.showModal();
+}
 
 
 loadPhone()
