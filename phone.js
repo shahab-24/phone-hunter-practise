@@ -77,13 +77,21 @@ const handlePhoneDetail = async (id) => {
 }
 
 const showPhoneDetail = (phone) => {
+  console.log(phone);
   const phoneTitle = document.getElementById('phone-title');
   phoneTitle.innerText = phone.name;
 
   const phoneContainer = document.getElementById('phone_detail-container');
   phoneContainer.innerHTML = `
-  <img src="${phone.image}">
-  brand: ${phone.brand};
+  <img class="text-center mx-auto" src="${phone.image}">
+  <p>chipset: ${phone.mainFeatures.chipSet};</p>
+  <p>memory: ${phone.mainFeatures.memory};</p>
+  <p>storage: ${phone.mainFeatures.storage};</p>
+  <p>display: ${phone.mainFeatures.displaySize};</p>
+  <p>wlan: ${phone.others.WLAN};</p>
+  <p>bluetooth: ${phone.others.bluetooth};</p>
+  <p>releasedate: ${phone.releaseDate};</p>
+  <p>brand: ${phone.brand};</p>
   
 
   `
