@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Hunter.2</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container mx-auto py-4">
+  <!-- nav bar -->
+  <nav class="flex justify-between items-center">
+    <h4 class="font-bold text-2xl text-black">Hot Gadges</h4>
+    <button class="btn btn-primary">Sign Up</button>
+  </nav>
+  <!-- hero section -->
+  <div class="text-center px-4 py-2">
+    <h2 class="text-6xl text-black font-bold text-center">Apple Iphone 13 Pro Max</h2>
+  <p class="my-2">There are many variations of passages of Lorem Ipsum available, <br> but the majority have suffered alteration in some form, by injected humou.</p>
+  </div>
+  <div class="text-center">
+    <img class="w-full bg-cover" src="images/Group 48095420.png" alt="">
+  </div>
+  <div>
+    <h4 class="text-4xl text-black font-bold text-center">
+      Search Your Phone
+    </h4>
+  </div>
+  <!-- search bar -->
+  <div class="text-center my-4 space-x-2">
+    <input id="input-field" type="text" placeholder="Search your phone" class="input input-bordered w-full max-w-xl" />
+    <button onclick="handleSearch()" class="btn btn-primary font-semibold text-2xl px-6">Search</button>
+  </div>
+
+  <!-- display items -->
+<section>
+  <div class="text-center my-40">
+    <span id="loading-spinner" class="loading loading-spinner loading-lg text-purple-800 hidden"></span>
+  </div>
+
+
+  <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-4 p-6">
+ 
+  </div>
+  <div class="text-center">
+    <button id="show-all" class="btn btn-primary font-semibold text-2xl px-6 hidden">See More....</button>
+  </div>
+</section>
+
+
+
+
+  <script src="phone.js"></script>
+</body>
+</html>
